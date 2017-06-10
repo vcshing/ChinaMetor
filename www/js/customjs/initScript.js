@@ -11,7 +11,7 @@ function mainPage(){
 
 
   $(".titleSelectedMap").html(menuArr[defaultMapItem]);
-  $(".pinchZoomImg").attr("src","image/" + menuArr[defaultMapItem] + ".png");
+  $(".pinchZoomImg").attr("src","image/" + defaultMapItem + ".png");
     $(".mapSiteLink").html(menuSiteArr[defaultMapItem]);
 
   $('.pinchZoomImg').each(function () {
