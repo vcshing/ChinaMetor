@@ -7,15 +7,14 @@ function mainPage(){
       assignWordClassTranslation(translatedLangArr, "word");
   });
   addMenu();
-  showImage = new RTP.PinchZoom(  $('.pinchZoomImg'),{});
-
+  //showImage = new RTP.PinchZoom(  $('.pinchZoomImg'),{});
 
   $(".titleSelectedMap").html(menuArr[defaultMapItem]);
   $(".pinchZoomImg").attr("src","image/" + defaultMapItem + ".png");
-    $(".mapSiteLink").html(menuSiteArr[defaultMapItem]);
+  $(".mapSiteLink").html(menuSiteArr[defaultMapItem]);
 
   $('.pinchZoomImg').each(function () {
-       showImage =  RTP.PinchZoom($(this), {});
+       new RTP.PinchZoom($(this), {});
   });
 }
 
