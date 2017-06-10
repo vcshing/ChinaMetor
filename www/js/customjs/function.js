@@ -105,12 +105,17 @@ function setLang() {
 
 function getCookie(index, contentIndex, defaultValue) {
     var contentIndex = String(contentIndex);
-    var cookie = storageManager.getCookie(index);
+    try {
+      var cookie = storageManager.getCookie(index);
+    } catch (err) {
+      return defaultValue;
+    }
     if (cookie == "" || cookie == null) {
         return defaultValue;
     } else if (contentIndex == "") {
         return cookie;
     } else {
+
         if (cookie[contentIndex] == undefined) {
             return defaultValue;
         } else {
@@ -313,4 +318,28 @@ function saveImageAsJpg(name, address) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+}
+
+function addMenu(){
+  var metroListHTML="";
+  $.each(menuArr, function( index, value ) {
+
+    if(defaultMapItem ==index){
+      metroListHTML += "<p><a href=\"#\" class=\"button button-raised active \" data-menuListItem=\"" +index+"\">"+value+"<\/a><\/p>";
+    }else {
+      metroListHTML += "<p><a href=\"#\" class=\"button button-raised \" data-menuListItem=\"" +index+"\">"+value+"<\/a><\/p>";
+    }
+  });
+  $(".menuList").html(metroListHTML);
+
+
+
+  $(".menuList").bind("click",function(){
+    var selectMapItem= $(this).find(".active-state").attr("data-menuListItem");
+    setCookie("selectMapItem",selectMapItem);
+  //  myApp.closePanel('left');
+    location.reload();
+  })
+
+
 }

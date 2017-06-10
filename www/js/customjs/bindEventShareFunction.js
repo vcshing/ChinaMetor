@@ -6,6 +6,11 @@ $(".otherApp").bind("click", function(e) {
     window.open(url, target, options);
 })
 
+$(".shareApp").bind("click", function(e) {
+    window.plugins.socialsharing.share("China Metor", "Good App", "", "https://play.google.com/store/apps/details?id=com.skyexplorer.chinametor");
+})
+
+
 $(".goodlist").bind("click", function(e) {
     $(".badlist").removeClass("active");
     $(".goodlist").addClass("active");
@@ -34,9 +39,7 @@ $('.startTutorials').on('click', function(e) {
 
 });
 
-$(".shareApp").bind("click", function(e) {
-    window.plugins.socialsharing.share("Free Talk", "#freetalk", "", "https://play.google.com/store/apps/details?id=com.skyexplorer.quotedesign");
-})
+
 
 $(".linkFaceBook").bind("click", function(e) {
     e.preventDefault();
@@ -170,3 +173,8 @@ $(".designFormShare").bind("click", function(e) {
         window.plugins.socialsharing.share(" ", "#freetalk", $(".designImage").attr("src"), " ");
     }
 });
+
+$(".titleButton").bind("click",function(){
+     myApp.openPanel('left');
+
+})
