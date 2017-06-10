@@ -336,9 +336,16 @@ function addMenu(){
 
   $(".menuList").bind("click",function(){
     var selectMapItem= $(this).find(".active-state").attr("data-menuListItem");
+    $(".pinchZoomImg").attr("src","image/" + selectMapItem + ".png");
+    $('div.pinch-zoom').each(function () {
+        showImage = RTP.PinchZoom(this, {});
+    });
+    $(this).find("a").removeClass("active");
+    $(this).find(".active-state").addClass("active");
+    $(".titleSelectedMap").html( $(this).find(".active-state").html() );
+    $(".mapSiteLink").html(menuSiteArr[selectMapItem]);
     setCookie("selectMapItem",selectMapItem);
-  //  myApp.closePanel('left');
-    location.reload();
+    myApp.closePanel('left');
   })
 
 
