@@ -10,6 +10,20 @@ $(".shareApp").bind("click", function(e) {
     window.plugins.socialsharing.share("China Metor", "Good App", "", "https://play.google.com/store/apps/details?id=com.skyexplorer.chinametor");
 })
 
+$(".googleMap").bind("click", function(e) {
+  e.preventDefault();
+  var target = "_system";
+  var options = "location=yes";
+  var url = "https://www.google.com.hk/maps";
+  window.open(url, target, options);})
+
+
+$(".baiduMap").bind("click", function(e) {
+  e.preventDefault();
+  var target = "_system";
+  var options = "location=yes";
+  var url = "http://map.baidu.com/";
+  window.open(url, target, options);})
 
 $(".goodlist").bind("click", function(e) {
     $(".badlist").removeClass("active");
