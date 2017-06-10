@@ -14,6 +14,10 @@ Url = {
     }
 };
 
+function openElementUrl(element,target){
+  var options = "location=yes";
+  window.open($(element).html(), target, options);
+}
 
 function toCode(TempStrWord, BIGtoGB) {
     var TempStr = "";
