@@ -11,19 +11,30 @@ $(".shareApp").bind("click", function(e) {
 })
 
 $(".googleMap").bind("click", function(e) {
-  e.preventDefault();
-  var target = "_system";
-  var options = "location=yes";
-  var url = "https://www.google.com.hk/maps";
-  window.open(url, target, options);})
+    e.preventDefault();
+    var target = "_system";
+    var options = "location=yes";
+    var url = "https://www.google.com.hk/maps";
+    window.open(url, target, options);
+})
 
 
 $(".baiduMap").bind("click", function(e) {
-  e.preventDefault();
-  var target = "_system";
-  var options = "location=yes";
-  var url = "http://map.baidu.com/";
-  window.open(url, target, options);})
+    e.preventDefault();
+    var target = "_system";
+    var options = "location=yes";
+    var url = "http://map.baidu.com/";
+    window.open(url, target, options);
+})
+
+$(".gaodeMap").bind("click", function(e) {
+    e.preventDefault();
+    var target = "_system";
+    var options = "location=yes";
+    var url = "https://gaode.com/";
+    window.open(url, target, options);
+})
+
 
 $(".goodlist").bind("click", function(e) {
     $(".badlist").removeClass("active");
@@ -129,7 +140,7 @@ $$('.designFormSubmit').on('click', function() {
 
 $(".designFormPublish").bind("click", function() {
     if ($(".designImage").attr("data-id") != undefined) {
-      myApp.showPreloader();
+        myApp.showPreloader();
         $.ajax({
             type: 'POST',
             url: 'http://gogogo.synology.me/api/genword/publish.php',
@@ -138,16 +149,16 @@ $(".designFormPublish").bind("click", function() {
             },
             dataType: 'JSON',
             success: function(response) {
-              myApp.hidePreloader();
+                myApp.hidePreloader();
                 if (response.status == 1) {
                     myApp.alert("Publish Success");
-                }else{
-                  myApp.alert("Publish Fail");
+                } else {
+                    myApp.alert("Publish Fail");
                 }
             },
             error: function(response) {
                 myApp.hidePreloader();
-                      myApp.alert("Publish Fail");
+                myApp.alert("Publish Fail");
             }
         })
     }
@@ -188,7 +199,7 @@ $(".designFormShare").bind("click", function(e) {
     }
 });
 
-$(".titleButton").bind("click",function(){
-     myApp.openPanel('left');
+$(".titleButton").bind("click", function() {
+    myApp.openPanel('left');
 
 })
